@@ -6,7 +6,7 @@ Author : Rupak Roy
 
 Contact number : 8777499303
 
-Steps to run :
+Steps to run script directy from run.bat :
 
 |-> Double click on run.bat
 
