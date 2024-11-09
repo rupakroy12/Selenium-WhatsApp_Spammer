@@ -9,8 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WhatsApp_Spammer {
 
 	public static void main(String args[]) throws Exception {
-		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "./driver/chromedriver.exe");
+		WebDriver driver =  new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
 
 		driver.get("https://web.whatsapp.com/");
@@ -31,7 +31,7 @@ public class WhatsApp_Spammer {
 				number = sc.nextInt();
 
 				System.out.println("Are You sure, You want to spam  "
-						+ driver.findElement(By.xpath("//*[@id=\"main\"]/header/div[2]/div/div/span")).getText()
+						+ driver.findElement(By.xpath("//*[@class=\"_amig\"]")).getText()
 						+ " ?");
 				System.out.println("Type Y to continue : ");
 
@@ -41,7 +41,7 @@ public class WhatsApp_Spammer {
 				if (confirm.equalsIgnoreCase("Y")) {
 					for (int i = 1; i <= number; i++) {
 						try {
-							driver.findElement(By.xpath("//*[@id=\"main\"]/footer/div[1]/div[2]/div/div[1]/div/div[2]"))
+							driver.findElement(By.xpath("(//*[@contenteditable=\"true\" and @role=\"textbox\"])[2]"))
 									.sendKeys(message + Keys.ENTER);
 						} catch (Exception e) {
 							// TODO Auto-generated catch block
@@ -50,7 +50,7 @@ public class WhatsApp_Spammer {
 
 					}
 					System.out.println(number + " messages sent successfully to "
-							+ driver.findElement(By.xpath("//*[@id=\"main\"]/header/div[2]/div/div/span")).getText());
+							+ driver.findElement(By.xpath("//*[@class=\"_amig\"]")).getText());
 					System.out.println("___________________________________________");
 
 				} else {
