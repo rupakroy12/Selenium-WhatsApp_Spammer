@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WhatsApp_Spammer {
 
 	public static void main(String args[]) throws Exception {
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		WebDriver driver =  new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(150, TimeUnit.SECONDS);
 
